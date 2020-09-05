@@ -1,0 +1,25 @@
+.container{
+  background-color: gray;
+  padding: 10px;
+}
+.player-progress{
+  background-color: wheat;
+  padding: 10px;
+}
+.control{
+  background-color:rgb(233, 219, 219);
+  padding: 10px;
+}
+.control-left{
+  background-color:rgb(139, 123, 123);
+  padding: 10px;
+}
+.control-right{
+  background-color:rgb(167, 117, 150);
+  padding: 10px;
+}
+.playlist{
+  background-color:rgb(20, 83, 31);
+  padding: 10px;
+}
+.pull-left{float:left}
