@@ -1,25 +1,38 @@
+
 .container{
-  background-color: gray;
+  border-radius: 10px;
+  box-shadow: 0 0 10px grey;
   padding: 10px;
 }
-.player-progress{
-  background-color: wheat;
-  padding: 10px;
+.top{
+  display:flex;
+  justify-content: space-between;
+}
+.progress{
+  height:32px;
+  background-color: rgb(216, 212, 212);
+  margin:-5px;
 }
 .control{
-  background-color:rgb(233, 219, 219);
-  padding: 10px;
+  display:flex;
+  width:100%;
+  justify-content: center;
 }
 .control-left{
-  background-color:rgb(139, 123, 123);
-  padding: 10px;
+  margin:2px 0px;
 }
-.control-right{
-  background-color:rgb(167, 117, 150);
-  padding: 10px;
+.control-center>ul, .control-right>ul{
+  display:flex;  
+  justify-content: center;
+  list-style: none;
 }
-.playlist{
-  background-color:rgb(20, 83, 31);
-  padding: 10px;
+.control-center>ul>li, .control-right>ul>li{
+  margin:0 5px; 
+}
+#playList>button{
+ width:100%;
 }
 .pull-left{float:left}
+.dropdown-menu{
+  width:100%;
+}
