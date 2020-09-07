@@ -26,10 +26,11 @@ export function updatePlayerPB(mediaTitle, album){
   updateVideo(mediaLink);
 }
 function updateVideo(videoLink){
-  $(".video iframe").remove();
+  console.log(videoLink);
+  $("#video-placeholder iframe").remove();
   $('<iframe frameborder="0" allowfullscreen></iframe>')
     .attr("src", videoLink)
-    .appendTo(".video");
+    .appendTo("#video-placeholder");
 }
 
 // https://stackoverflow.com/questions/6312993/javascript-seconds-to-time-string-with-format-hhmmss/6313008

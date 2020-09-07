@@ -57,14 +57,14 @@ ul.playerPB>li {
 .dropdown-menu{
   width:100%;
 }
-#video{
+#video-placeholder{
  /* 25% of viewport */
  height: 35vh;
  margin: auto;
  width: 50%; 
  position:relative;
 }
-#video iframe{
+#video-placeholder iframe{
   width:100%;
   height: 100%;
   position:absolute;
