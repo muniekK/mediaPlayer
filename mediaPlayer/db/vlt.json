@@ -1,0 +1,15 @@
+{
+  "album": "voluongtho",
+  "author":"phap su tinh khong",
+  "episodes":[{
+      "title":"vlt - tap 1",
+      "link":"https://www.youtube.com/watch?v=iWUR04B42Hc",
+      "lenght":3360
+    },
+    {
+      "title":"vlt - tap 2",  
+      "link":"https://www.youtube.com/watch?v=t0Qp3McD3j0",
+      "lenght":4000
+    }
+  ]
+}

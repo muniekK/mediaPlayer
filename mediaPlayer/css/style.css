@@ -4,6 +4,9 @@
   box-shadow: 0 0 10px grey;
   padding: 10px;
 }
+#songInfo{
+  margin:15px 0px;
+}
 .top{
   display:flex;
   justify-content: space-between;
@@ -28,9 +31,6 @@
 }
 .control-center>ul>li, .control-right>ul>li{
   margin:0 5px; 
-}
-#playList>button{
- width:100%;
 }
 .pull-left{float:left}
 .dropdown-menu{
