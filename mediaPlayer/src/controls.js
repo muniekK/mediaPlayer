@@ -102,7 +102,6 @@ export function clearPBars(minPB){
   for (let i = minPB; i <= 15; i++){
     let currPB = 'progress-bar15'; 
     (i<10) ? currPB = `progress-bar0${i}`: currPB = `progress-bar${i}`;
-    console.log(currPB);
     updateProgressBar(0, currPB);
   }
 }

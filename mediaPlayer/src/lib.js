@@ -27,7 +27,7 @@ export function updatePlayerPB(mediaTitle, album){
 }
 function updateVideo(videoLink){
   $(".video iframe").remove();
-  $('<iframe width="420" height="315" frameborder="0" allowfullscreen></iframe>')
+  $('<iframe frameborder="0" allowfullscreen></iframe>')
     .attr("src", videoLink)
     .appendTo(".video");
 }
