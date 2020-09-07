@@ -2,7 +2,8 @@ var player = document.querySelector("video");
 
 $('#progress01').click(function(e) {
   let currPosi = e.offsetX / this.offsetWidth * 100;
-  updateProgressBar(currPosi, "progress-bar01");;
+  player.currentTime = currPosi/100 * player.duration;
+  updateProgressBar(currPosi, "progress-bar01");
   clearPBars(2);
 });
 
@@ -109,6 +110,27 @@ function updateProgressBar(value, progressBar){
   var pb = document.getElementById(progressBar);
   pb.style.width = `${value}%`;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // function getEventTarget(e) {
 //   e = e || window.event;
 //   return e.target || e.srcElement; 
