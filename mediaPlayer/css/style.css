@@ -4,10 +4,15 @@
   box-shadow: 0 0 10px grey;
   padding: 10px;
 }
-#songInfo{
-  margin:15px 0px;
+.video{
+  margin: auto;
+  width: 50%;
+  padding: 10px;
 }
-.top{
+#songInfo{
+  margin: 15px 0px;
+}
+.song-info{
   display:flex;
   justify-content: space-between;
 }
@@ -15,6 +20,10 @@
   height:32px;
   background-color: rgb(216, 212, 212);
   margin:-5px;
+}
+.progress-bar{
+  background-color: rgb(150, 141, 236);
+  transition-duration: 0ms;
 }
 .control{
   display:flex;
@@ -29,10 +38,19 @@
   justify-content: center;
   list-style: none;
 }
+ul.controls {
+  list-style: none;
+}
+ul.controls>li {
+  margin:15px 0px;
+}
 .control-center>ul>li, .control-right>ul>li{
   margin:0 5px; 
 }
-.pull-left{float:left}
+.pull-left{
+  float:left;
+  margin: 0px 10px 0px;
+}
 .dropdown-menu{
   width:100%;
 }
