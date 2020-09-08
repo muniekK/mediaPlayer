@@ -62,7 +62,8 @@ ul.playerPB>li {
  height: 35vh;
  margin: auto;
  width: 50%; 
- position:relative;
+ display:flex;
+
 }
 #video-placeholder iframe{
   width:100%;
