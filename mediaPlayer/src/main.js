@@ -10,17 +10,15 @@ $(document).ready(function(){
   let currEpisode = vltObj.episodes[0];
   $.getScript("https://www.youtube.com/iframe_api", function() {
     //load default video
-    
-    loadVideo(currEpisode.link);
-    console.log('hello');
-      
+    loadVideo(currEpisode.link); 
+
   });
-    
-  updatePlayerPB(currEpisode.title, vltObj);
+
+  document.getElementById("vltPlayList").innerHTML = fillPlayList(vltObj.episodes);
+  document.getElementById("ttndPlayList").innerHTML = fillPlayList(ttndObj.episodes);
 
   $('#vltPlayList a').click(function(){ 
     let mediaTitle = $(this).text();
-    //onYouTubeIframeAPIReady(currEpisode.link);
     updatePlayerPB(mediaTitle, vltObj);
     controls.clearPBars(1);
   });

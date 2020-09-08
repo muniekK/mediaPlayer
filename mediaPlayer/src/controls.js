@@ -77,6 +77,9 @@ export function loadVideo(videoID) {
       height: "600",
       width: "400",
       videoId: videoID,
+      playerVars: {
+        color: 'white'
+      },
       events: {
         onReady: initialize
       }

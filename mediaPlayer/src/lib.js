@@ -19,12 +19,7 @@ export function updatePlayerPB(mediaTitle, album){
   document.getElementById('duration').innerHTML = toHHMMSS(mediaLenght);
   document.getElementById('songInfo').innerHTML = `${mediaTitle} - ${album.author} - ${album.album}`;
 
-  
-  if (player != null){
-    player.loadVideoById(mediaLink);
-  } else {
-    console.log('player undefined');
-  }
+  player.loadVideoById(mediaLink);
 }
 
 function toHHMMSS(sec){
