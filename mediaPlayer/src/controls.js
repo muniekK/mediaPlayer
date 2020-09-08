@@ -14,7 +14,10 @@ ul.onclick = function(event) {
   let currPBID = `progress-bar${currPNB}`; 
   (currPNB < 10) ? currPNB = currPNB.slice(-1): '';
   
-  let currPosi = event.offsetX / this.offsetWidth * 100;
+  //bug on click position on progres bar: css>.pull-left>float:left cause the error
+  let errorMarge = (event.offsetX / this.offsetWidth*100)*0.055;
+  let currPosi = event.offsetX / this.offsetWidth * 100 + errorMarge;
+
   updateProgressBar(currPosi, currPBID);
   
   fillPBars(parseInt(currPNB)-1);
@@ -78,7 +81,9 @@ export function loadVideo(videoID) {
       width: "400",
       videoId: videoID,
       playerVars: {
-        color: 'white'
+        color: 'white',
+        'autoplay': 1, 
+        'controls': 0
       },
       events: {
         onReady: initialize
@@ -86,12 +91,27 @@ export function loadVideo(videoID) {
     });
   });
 }
+function getPBPosi(){
+  let value, currPB;
+  let onePBValue =  player.getDuration() / 15;
 
+  let percent = player.getCurrentTime() / player.getDuration();
+
+  let pbNo = Math.floor(percent * 15) + 1; // 15 = nbPBars
+  
+  (pbNo == 1) ? value = percent * 15 * 100: value = ((percent * 15) - (pbNo)+1) * 100;
+
+  (pbNo < 10) ? currPB = `progress-bar0${pbNo}`:currPB = `progress-bar${pbNo}`;
+
+  return {pb:currPB, value:value};
+}
 function initialize(){
 
     // Update the controls on load
     updateTimerDisplay();
-    updateProgressBar();
+
+    let progress = getPBPosi();
+    updateProgressBar(progress.value, progress.pb);
 
     // Clear any old interval.
     clearInterval(time_update_interval);
@@ -100,7 +120,9 @@ function initialize(){
     // the elapsed part of the progress bar every second.
     time_update_interval = setInterval(function () {
         updateTimerDisplay();
-        //updateProgressBar();
+
+        let progress = getPBPosi();
+        updateProgressBar(progress.value, progress.pb);
     }, 1000);
 
 

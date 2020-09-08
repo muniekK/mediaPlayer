@@ -19,7 +19,7 @@
 .progress{
   height:32px;
   background-color: rgb(216, 212, 212);
-  margin:-5px;
+  margin:-5px; 
 }
 .progress-bar{
   background-color: rgb(150, 141, 236);
@@ -52,7 +52,10 @@ ul.playerPB>li {
 }
 .pull-left{
   float:left;
-  margin: 0px 10px 0px;
+} 
+.progress-bar-placeholder{
+  display:flex;
+  align-content: center;
 }
 .dropdown-menu{
   width:100%;
