@@ -1,5 +1,9 @@
 
 var ul = document.getElementById('playerPB');
+
+export var player,
+    time_update_interval = 0;
+
 ul.onclick = function(event) {
 
   let target = getEventTarget(event);
@@ -23,9 +27,6 @@ ul.onclick = function(event) {
   var newTime = onePBTime * (currPNB - 1) + currPosi / 100 * onePBTime;
   // Skip video to new time.
   player.seekTo(newTime);
-
-
-
 };
 
 function getEventTarget(e) {
@@ -55,23 +56,32 @@ function updateProgressBar(value, progressBar){
 
 // youtube player
 
-export var player,
-    time_update_interval = 0;
-
-export function onYouTubeIframeAPIReady(videoID){
-  console.log(videoID);
-    player = new YT.Player('video-placeholder', {
-        width: 600,
-        height: 400,
-        videoId: videoID,
-        playerVars: {
-            color: 'white',
-            //playlist: 'taJ60kskkns,FG0fTKAqZ5g'
-        },
-        events: {
-            onReady: initialize
-        }
+//    this FAILS: error => YT is not a constructor
+// player = new YT.Player('video-placeholder', {
+//       width: 600,
+//       height: 400,
+//       videoId: 'MnNrETtyaTI',
+//       playerVars: {
+//           color: 'white',
+//           //playlist: 'taJ60kskkns,FG0fTKAqZ5g'
+//       },
+//       events: {
+//           //onReady: initialize
+//       }
+//   });
+// }
+//https://dev.to/dance2die/youtube-iframe-api-yt-player-is-not-a-constructor-pa6
+export function loadVideo(videoID) {
+  window.YT.ready(function() {
+    player = new window.YT.Player("video-placeholder", {
+      height: "600",
+      width: "400",
+      videoId: videoID,
+      events: {
+        onReady: initialize
+      }
     });
+  });
 }
 
 function initialize(){

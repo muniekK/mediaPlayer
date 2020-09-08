@@ -1,4 +1,4 @@
-import {onYouTubeIframeAPIReady, player} from './controls'
+import {player} from './controls'
 
 export function fillPlayList(dataObj){
   let htmlText = '';
@@ -19,10 +19,14 @@ export function updatePlayerPB(mediaTitle, album){
   document.getElementById('duration').innerHTML = toHHMMSS(mediaLenght);
   document.getElementById('songInfo').innerHTML = `${mediaTitle} - ${album.author} - ${album.album}`;
 
-  player.loadVideoById(mediaLink);
+  
+  if (player != null){
+    player.loadVideoById(mediaLink);
+  } else {
+    console.log('player undefined');
+  }
 }
 
-// https://stackoverflow.com/questions/6312993/javascript-seconds-to-time-string-with-format-hhmmss/6313008
 function toHHMMSS(sec){
   return new Date(1000 * sec).toISOString().substr(11, 8)	
 }
